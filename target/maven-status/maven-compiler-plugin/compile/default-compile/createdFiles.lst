@@ -1,0 +1,12 @@
+com/progresssoft/fxwarehouse/service/DealService.class
+com/progresssoft/fxwarehouse/dto/DealRequest.class
+com/progresssoft/fxwarehouse/dto/DealResponse.class
+com/progresssoft/fxwarehouse/exception/GlobalExceptionHandler.class
+com/progresssoft/fxwarehouse/ClusteredDataWarehouseApplication.class
+com/progresssoft/fxwarehouse/entity/Deal$DealBuilder.class
+com/progresssoft/fxwarehouse/repository/DealRepository.class
+com/progresssoft/fxwarehouse/service/DealServiceImpl.class
+com/progresssoft/fxwarehouse/entity/Deal.class
+com/progresssoft/fxwarehouse/dto/DealResponse$DealResponseBuilder.class
+com/progresssoft/fxwarehouse/controller/DealController.class
+com/progresssoft/fxwarehouse/exception/DuplicateDealException.class

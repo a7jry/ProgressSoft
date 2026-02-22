@@ -1,0 +1,10 @@
+/Users/a7jry/Desktop/ProgressSoft/src/main/java/com/progresssoft/fxwarehouse/repository/DealRepository.java
+/Users/a7jry/Desktop/ProgressSoft/src/main/java/com/progresssoft/fxwarehouse/service/DealServiceImpl.java
+/Users/a7jry/Desktop/ProgressSoft/src/main/java/com/progresssoft/fxwarehouse/service/DealService.java
+/Users/a7jry/Desktop/ProgressSoft/src/main/java/com/progresssoft/fxwarehouse/ClusteredDataWarehouseApplication.java
+/Users/a7jry/Desktop/ProgressSoft/src/main/java/com/progresssoft/fxwarehouse/controller/DealController.java
+/Users/a7jry/Desktop/ProgressSoft/src/main/java/com/progresssoft/fxwarehouse/exception/DuplicateDealException.java
+/Users/a7jry/Desktop/ProgressSoft/src/main/java/com/progresssoft/fxwarehouse/dto/DealResponse.java
+/Users/a7jry/Desktop/ProgressSoft/src/main/java/com/progresssoft/fxwarehouse/dto/DealRequest.java
+/Users/a7jry/Desktop/ProgressSoft/src/main/java/com/progresssoft/fxwarehouse/entity/Deal.java
+/Users/a7jry/Desktop/ProgressSoft/src/main/java/com/progresssoft/fxwarehouse/exception/GlobalExceptionHandler.java
