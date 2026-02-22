@@ -7,6 +7,5 @@ com/progresssoft/fxwarehouse/entity/Deal$DealBuilder.class
 com/progresssoft/fxwarehouse/repository/DealRepository.class
 com/progresssoft/fxwarehouse/service/DealServiceImpl.class
 com/progresssoft/fxwarehouse/entity/Deal.class
-com/progresssoft/fxwarehouse/dto/DealResponse$DealResponseBuilder.class
 com/progresssoft/fxwarehouse/controller/DealController.class
 com/progresssoft/fxwarehouse/exception/DuplicateDealException.class

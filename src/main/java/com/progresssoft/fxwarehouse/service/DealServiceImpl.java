@@ -5,23 +5,27 @@ import com.progresssoft.fxwarehouse.dto.DealResponse;
 import com.progresssoft.fxwarehouse.entity.Deal;
 import com.progresssoft.fxwarehouse.exception.DuplicateDealException;
 import com.progresssoft.fxwarehouse.repository.DealRepository;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor
 public class DealServiceImpl implements DealService {
 
     private final DealRepository dealRepository;
 
+    public DealServiceImpl(DealRepository dealRepository) {
+        this.dealRepository = dealRepository;
+    }
+
     @Override
     public DealResponse saveDeal(DealRequest request) {
-        log.info("Processing deal {}", request.getDealUniqueId());
+        log.info("Received request to save deal: {}", request.getDealUniqueId());
 
-        dealRepository.findByDealUniqueId(request.getDealUniqueId())
-                .ifPresent(d -> { throw new DuplicateDealException("Deal already exists"); });
+        if (dealRepository.existsById(request.getDealUniqueId())) {
+            log.error("Duplicate deal detected: {}", request.getDealUniqueId());
+            throw new DuplicateDealException("Deal with ID " + request.getDealUniqueId() + " already exists.");
+        }
 
         Deal deal = Deal.builder()
                 .dealUniqueId(request.getDealUniqueId())
@@ -31,14 +35,15 @@ public class DealServiceImpl implements DealService {
                 .dealAmount(request.getDealAmount())
                 .build();
 
-        dealRepository.save(deal);
+        Deal saved = dealRepository.save(deal);
+        log.info("Deal {} saved successfully to database.", saved.getDealUniqueId());
 
-        return DealResponse.builder()
-                .dealUniqueId(deal.getDealUniqueId())
-                .fromCurrency(deal.getFromCurrency())
-                .toCurrency(deal.getToCurrency())
-                .dealTimestamp(deal.getDealTimestamp())
-                .dealAmount(deal.getDealAmount())
-                .build();
+        return new DealResponse(
+                saved.getDealUniqueId(),
+                saved.getFromCurrency(),
+                saved.getToCurrency(),
+                saved.getDealTimestamp(),
+                saved.getDealAmount()
+        );
     }
 }
